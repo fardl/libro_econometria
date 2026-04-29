@@ -2,8 +2,12 @@ name: Compilar PDF LaTeX
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build_latex:
@@ -17,17 +21,16 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
-      
-            - name: Commit y subir PDF al repo
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
-          git add main.pdf
-          git commit -m "Actualiza PDF automáticamente" || echo "No changes"
-          git push
 
-      - name: Subir PDF como artefacto
-        uses: actions/upload-artifact@v4
-        with:
-          name: libro_econometria_pdf
-          path: main.pdf
+      - name: Copiar PDF a docs
+        run: |
+          mkdir -p docs
+          cp main.pdf docs/main.pdf
+
+      - name: Subir PDF actualizado al repo
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add -f docs/main.pdf
+          git commit -m "Actualiza PDF generado" || echo "No hay cambios en el PDF"
+          git push
