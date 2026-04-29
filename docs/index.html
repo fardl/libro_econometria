@@ -1,53 +1,181 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Libro de Econometría</title>
+
   <style>
     body {
-      font-family: Georgia, serif;
-      max-width: 850px;
-      margin: 50px auto;
-      line-height: 1.6;
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f6f8;
+      color: #1f2937;
+    }
+
+    header {
+      background: linear-gradient(135deg, #12355b, #1f5f8b);
+      color: white;
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: 35px auto;
       padding: 0 20px;
     }
-    h1 {
-      color: #1f3a5f;
+
+    .buttons {
+      text-align: center;
+      margin: 30px 0;
     }
+
     .button {
       display: inline-block;
-      background: #1f3a5f;
+      background: #12355b;
       color: white;
-      padding: 12px 20px;
+      padding: 14px 22px;
+      margin: 8px;
+      border-radius: 8px;
       text-decoration: none;
-      border-radius: 6px;
-      margin-top: 15px;
+      font-weight: 600;
+    }
+
+    .button.secondary {
+      background: #374151;
+    }
+
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      color: #12355b;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .chapter {
+      border-left: 5px solid #1f5f8b;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #6b7280;
+      font-size: 14px;
     }
   </style>
 </head>
+
 <body>
 
+<header>
   <h1>Libro de Econometría</h1>
-
   <p>
-    Este sitio reúne el material actualizado del curso de Introducción a la Econometría.
+    Material actualizado del curso de Introducción a la Econometría,
+    con énfasis conceptual, analítico y aplicado usando R y datos dominicanos.
   </p>
+</header>
 
-  <p>
-    El documento se actualiza conforme avanza el curso.
-  </p>
-<a class="button" href="./main.pdf" target="_blank">
-  Descargar PDF actualizado
-</a>
-  <h2>Contenido</h2>
+<div class="container">
 
-  <ul>
-    <li>Capítulo 1: Introducción</li>
-  </ul>
+  <div class="buttons">
+    <a class="button" href="https://fardl.github.io/libro_econometria/main.pdf" target="_blank">
+      Descargar PDF actualizado
+    </a>
 
-  <p>
-    Profesor: Francisco A. Ramírez
-  </p>
+    <a class="button secondary" href="https://github.com/fardl/libro_econometria" target="_blank">
+      Ver repositorio
+    </a>
+  </div>
+
+  <section class="card">
+    <h2>Sobre este proyecto</h2>
+    <p>
+      Este sitio acompaña el desarrollo progresivo del libro del curso.
+      El documento se construye en LaTeX, se versiona con GitHub y se publica
+      automáticamente para que los estudiantes siempre tengan acceso a la versión más reciente.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Contenido del libro</h2>
+
+    <div class="grid">
+      <div class="card chapter">
+        <h3>Capítulo 1</h3>
+        <p>Introducción, motivación, preguntas empíricas y rol de los datos.</p>
+      </div>
+
+      <div class="card chapter">
+        <h3>Capítulo 2</h3>
+        <p>Modelo de regresión lineal simple y fundamentos de estimación.</p>
+      </div>
+
+      <div class="card chapter">
+        <h3>Capítulo 3</h3>
+        <p>Regresión múltiple, interpretación de coeficientes y supuestos.</p>
+      </div>
+
+      <div class="card chapter">
+        <h3>Capítulo 4</h3>
+        <p>Inferencia, pruebas de hipótesis y restricciones lineales.</p>
+      </div>
+
+      <div class="card chapter">
+        <h3>Capítulo 5</h3>
+        <p>Datos de corte transversal, limpieza de bases y aplicaciones dominicanas.</p>
+      </div>
+
+      <div class="card chapter">
+        <h3>Capítulo 6</h3>
+        <p>Introducción a inferencia causal y evaluación de políticas públicas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Material para estudiantes</h2>
+    <p>
+      Use esta página como punto de entrada al curso. El PDF principal será actualizado
+      conforme se incorporen nuevos capítulos, prácticas, ejercicios y códigos en R.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Profesor</h2>
+    <p>
+      Francisco A. Ramírez<br>
+      Econometría aplicada, modelos económicos y análisis de datos.
+    </p>
+  </section>
+
+</div>
+
+<footer>
+  Última actualización vía GitHub Pages · Libro de Econometría
+</footer>
 
 </body>
 </html>
