@@ -17,6 +17,14 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
+      
+            - name: Commit y subir PDF al repo
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add main.pdf
+          git commit -m "Actualiza PDF automáticamente" || echo "No changes"
+          git push
 
       - name: Subir PDF como artefacto
         uses: actions/upload-artifact@v4
